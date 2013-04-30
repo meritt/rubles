@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Rubles.js by meritt</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Rubles.js</h1>
+        <p>Стоимость прописью</p>
+        <p class="view"><a href="https://github.com/meritt/rubles">View the Project on GitHub <small>meritt/rubles</small></a></p>
+        <ul>
+          <li><a href="https://github.com/meritt/rubles/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/meritt/rubles/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/meritt/rubles">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>В российском документообороте принято писать сумму прописью. Такое должно быть в договорах, актах, расписках и других подобных документах. Rubles.js призван решить эту проблему комплексно, он работает в браузере и на серверной стороне.</p>
+
+<h3>На сервере</h3>
+
+<h4>Установить через <a href="//npmjs.org">npm</a>
+</h4>
+
+<pre><code>$ npm install rubles
+</code></pre>
+
+<h4>Использовать в JavaScript</h4>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">rubles</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'rubles'</span><span class="p">).</span><span class="nx">rubles</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="nx">rubles</span><span class="p">(</span><span class="mf">12.10</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span> <span class="c1">// двенадцать рублей 10 копеек</span>
+
+<span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="nx">rubles</span><span class="p">(</span><span class="s2">"52151,31"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span> <span class="c1">// пятьдесят две тысячи сто пятьдесят один рубль 31 копейка</span>
+</pre></div>
+
+<h4>Использовать в CoffeeScript</h4>
+
+<div class="highlight"><pre><span class="p">{</span><span class="nx">rubles</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span> <span class="s">'rubles'</span>
+
+<span class="nv">text = </span><span class="nx">rubles</span> <span class="mf">1000.32</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="nx">text</span> <span class="c1"># одна тысяча рублей 32 копейки</span>
+
+<span class="nv">text = </span><span class="nx">rubles</span> <span class="s">"2000000,1"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="nx">text</span> <span class="c1"># два миллиона рублей 10 копеек</span>
+</pre></div>
+
+<hr><h3>В браузере</h3>
+
+<h4>Установить через <a href="http://bower.io">bower</a>
+</h4>
+
+<pre><code>$ bower install rubles --save
+</code></pre>
+
+<h4>Подключить</h4>
+
+<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"components/rubles/lib/rubles.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<h4>Использовать</h4>
+
+<div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+<span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="nx">rubles</span><span class="p">(</span><span class="mf">12.10</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span> <span class="c1">// двенадцать рублей 10 копеек</span>
+
+<span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="nx">rubles</span><span class="p">(</span><span class="s2">"52151,31"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span> <span class="c1">// пятьдесят две тысячи сто пятьдесят один рубль 31 копейка</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+<hr><h3>Нашли ошибку?</h3>
+
+<p>Пожалуйста, создайте тикет — <a href="https://github.com/meritt/rubles/issues">https://github.com/meritt/rubles/issues</a></p>
+
+<h3>Тестирование <a href="https://travis-ci.org/meritt/rubles"><img src="https://travis-ci.org/meritt/rubles.png?branch=master" alt="Build Status"></a>
+</h3>
+
+<p>Для запуска тестов обновите репозиторий и запустите:</p>
+
+<pre><code>$ npm test
+</code></pre>
+
+<h2>Автор</h2>
+
+<ul>
+<li>
+<a href="mailto:alexey@simonenko.su">Алексей Симоненко</a>, <a href="http://simonenko.su">simonenko.su</a>
+</li>
+</ul>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/meritt">meritt</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-37507032-9");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
