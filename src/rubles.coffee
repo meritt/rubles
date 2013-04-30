@@ -37,23 +37,22 @@ parseNumber = (number, count) ->
 
     numeral += "#{words[1][first]} #{words[0][second]} "
 
-  switch count
-    when 0
-      numeral += plural number, ['рубль', 'рубля', 'рублей']
+  if count is 0
+    numeral += plural number, ['рубль', 'рубля', 'рублей']
 
-    when 1
-      if numeral isnt '  '
-        numeral += plural number, ['тысяча ', 'тысячи ', 'тысяч ']
+  else if count is 1
+    if numeral isnt '  '
+      numeral += plural number, ['тысяча ', 'тысячи ', 'тысяч ']
 
-        numeral = numeral.replace 'один ', 'одна '
-        numeral = numeral.replace 'два ', 'две '
+      numeral = numeral.replace('один ', 'одна ')
+                       .replace('два ', 'две ')
 
-    when 2
-      if numeral isnt '  '
-        numeral += plural number, ['миллион ', 'миллиона ', 'миллионов ']
+  else if count is 2
+    if numeral isnt '  '
+      numeral += plural number, ['миллион ', 'миллиона ', 'миллионов ']
 
-    when 3
-      numeral += plural number, ['миллиард ', 'миллиарда ', 'миллиардов ']
+  else if count is 3
+    numeral += plural number, ['миллиард ', 'миллиарда ', 'миллиардов ']
 
   numeral
 
