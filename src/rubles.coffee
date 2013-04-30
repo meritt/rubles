@@ -42,13 +42,15 @@ parseNumber = (number, count) ->
       numeral += plural number, ['рубль', 'рубля', 'рублей']
 
     when 1
-      numeral += plural number, ['тысяча ', 'тысячи ', 'тысяч ']
+      if numeral isnt '  '
+        numeral += plural number, ['тысяча ', 'тысячи ', 'тысяч ']
 
-      numeral = numeral.replace 'один ', 'одна '
-                       .replace 'два ', 'две '
+        numeral = numeral.replace 'один ', 'одна '
+        numeral = numeral.replace 'два ', 'две '
 
     when 2
-      numeral += plural number, ['миллион ', 'миллиона ', 'миллионов ']
+      if numeral isnt '  '
+        numeral += plural number, ['миллион ', 'миллиона ', 'миллионов ']
 
     when 3
       numeral += plural number, ['миллиард ', 'миллиарда ', 'миллиардов ']
@@ -57,7 +59,12 @@ parseNumber = (number, count) ->
 
 parseDecimals = (number) ->
   text = plural number, ['копейка', 'копейки', 'копеек']
-  number = '00' if number is 0
+
+  if number is 0
+    number = "00"
+  else if number < 10
+    number = "0#{number}"
+
   " #{number} #{text}"
 
 rubles = (number) ->
@@ -88,7 +95,7 @@ rubles = (number) ->
 
     length--
 
-  numeral = numeral.replace '  ', ' '
+  numeral = numeral.replace /\s+/g, ' '
   numeral += parseDecimals toFloat decimals if decimals
   numeral
 

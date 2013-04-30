@@ -23,6 +23,8 @@
   , "scripts": {
         "build": "coffee -c -o lib/ src/ && uglifyjs --no-copyright lib/rubles.js > lib/rubles.min.js"
       , "lint": "npm run-script build && jshint lib/rubles.js"
-      , "test": "mocha --require should --reporter spec --compilers coffee:coffee-script test/test.coffee"
+
+      , "mocha": "mocha --require should --reporter spec --compilers coffee:coffee-script test/test.coffee" 
+      , "test": "npm run-script build && npm run-script mocha"
   }
 }
