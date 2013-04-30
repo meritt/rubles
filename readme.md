@@ -1,37 +1,75 @@
-# Стоимость прописью
+## rubles.js — стоимость прописью [![Build Status](https://travis-ci.org/meritt/rubles.png?branch=master)](https://travis-ci.org/meritt/rubles)
 
-Описание
+В российском документообороте принято писать сумму прописью. Такое должно быть в договорах, актах, расписках и других подобных документах. Rubles.js призван решить эту проблему комплексно, он работает в браузере и на серверной стороне.
 
-Как использовать в JavaScript
------------------------------
+### На сервере
+
+#### Установить через [npm](//npmjs.org)
+
+	$ npm install rubles
+
+#### Использовать в JavaScript
 
 ```javascript
 var rubles = require('rubles').rubles;
-var text = rubles(12.10);
 
-// двенадцать рублей 10 копеек
-console.log(text);
+var text = rubles(12.10);
+console.log(text); // двенадцать рублей 10 копеек
+
+var text = rubles("52151,31");
+console.log(text); // пятьдесят две тысячи сто пятьдесят один рубль 31 копейка
 ```
 
-Как использовать в CoffeeScript
--------------------------------
+#### Использовать в CoffeeScript
 
 ```coffeescript
 {rubles} = require 'rubles'
-text = rubles 12.10
 
-# двенадцать рублей 10 копеек
-console.log text
+text = rubles 1000.32
+console.log text # одна тысяча рублей 32 копейки
+
+text = rubles "2000000,1"
+console.log text # два миллиона рублей 10 копеек
 ```
 
 ----------------
 
-Установить с помощью npm
-------------------------
+### В браузере
 
-	npm install rubles
+#### Установить через [bower](http://bower.io)
 
-Автор
------
+	$ bower install rubles --save
+
+#### Подключить
+
+```html
+<script src="components/rubles/lib/rubles.min.js"></script>
+```
+
+#### Использовать
+
+```html
+<script>
+var text = rubles(12.10);
+console.log(text); // двенадцать рублей 10 копеек
+
+var text = rubles("52151,31");
+console.log(text); // пятьдесят две тысячи сто пятьдесят один рубль 31 копейка
+</script>
+```
+
+----------------
+
+### Нашли ошибку?
+
+Пожалуйста, создайте тикет — https://github.com/meritt/rubles/issues
+
+### Тестирование
+
+Для запуска тестов обновите репозиторий и запустите:
+
+	$ npm test
+
+## Автор
 
 * [Алексей Симоненко](mailto:alexey@simonenko.su), [simonenko.su](http://simonenko.su)
