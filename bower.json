@@ -5,7 +5,8 @@
   , "homepage": "http://simonenko.su/projects/rubles"
   , "main": "./lib/rubles.min.js"
   , "ignore": [
-        ".jshintrc"
+        ".gitignore"
+      , ".jshintrc"
       , ".npmignore"
       , ".travis.yml"
       , "package.json"
