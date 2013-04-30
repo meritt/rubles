@@ -101,4 +101,5 @@ rubles = (number) ->
   numeral += parseDecimals toFloat decimals if decimals
   numeral
 
-(exports or window).rubles = rubles
+global = if module? then exports else window
+global.rubles = rubles
