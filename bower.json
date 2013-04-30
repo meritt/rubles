@@ -1,0 +1,13 @@
+{
+    "name": "rubles"
+  , "version": "0.1.0"
+  , "author": "Alexey Simonenko <alexey@simonenko.su>"
+  , "homepage": "http://simonenko.su/projects/rubles"
+  , "main": "./lib/rubles.min.js"
+  , "ignore": [
+        ".jshintrc"
+      , ".npmignore"
+      , "package.json"
+      , "test"
+    ]
+}
