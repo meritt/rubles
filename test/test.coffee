@@ -1,3 +1,25 @@
+construct = (rubles) ->
+  text = rubles()
+  text.should.be.false
+
+  text = rubles undefined
+  text.should.be.false
+
+  text = rubles false
+  text.should.be.false
+
+  text = rubles 0
+  text.should.be.false
+
+  text = rubles "0"
+  text.should.be.false
+
+  text = rubles "0.00"
+  text.should.be.false
+
+  text = rubles "0,00"
+  text.should.be.false
+
 decimals =
   good: (rubles) ->
     text = rubles 1.00
@@ -149,9 +171,24 @@ billions = (rubles) ->
   text = rubles 999999999999
   text.should.equal 'девятьсот девяносто девять миллиардов девятьсот девяносто девять миллионов девятьсот девяносто девять тысяч девятьсот девяносто девять рублей 00 копеек'
 
+negative = (rubles) ->
+  text = rubles -100
+  text.should.be.false
+
+  text = rubles -0.01
+  text.should.be.false
+
+  text = rubles "-100"
+  text.should.be.false
+
+  text = rubles "-0.01"
+  text.should.be.false
+
 describe 'Rubles in CoffeeScript', ->
 
   {rubles} = require '../src/rubles'
+
+  it 'construct', -> construct rubles
 
   it 'decimals', -> decimals.good rubles
   it 'bad decimals', -> decimals.poor rubles
@@ -160,11 +197,15 @@ describe 'Rubles in CoffeeScript', ->
   it 'thousands', -> thousands rubles
   it 'millions', -> millions rubles
   it 'billions', -> billions rubles
+
+  it 'negative', -> negative rubles
 
 describe 'Rubles in JavaScript', ->
 
   {rubles} = require '../lib/rubles'
 
+  it 'construct', -> construct rubles
+
   it 'decimals', -> decimals.good rubles
   it 'bad decimals', -> decimals.poor rubles
 
@@ -172,3 +213,5 @@ describe 'Rubles in JavaScript', ->
   it 'thousands', -> thousands rubles
   it 'millions', -> millions rubles
   it 'billions', -> billions rubles
+
+  it 'negative', -> negative rubles
