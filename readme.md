@@ -6,7 +6,9 @@
 
 #### Установить через [npm](//npmjs.org)
 
-	$ npm install rubles
+```bash
+$ npm install rubles
+```
 
 #### Использовать в JavaScript
 
@@ -38,7 +40,9 @@ console.log text # два миллиона рублей 10 копеек
 
 #### Установить через [bower](http://bower.io)
 
-	$ bower install rubles --save
+```bash
+$ bower install rubles --save
+```
 
 #### Подключить
 
@@ -68,7 +72,9 @@ console.log(text); // пятьдесят две тысячи сто пятьде
 
 Для запуска тестов обновите репозиторий и запустите:
 
-	$ npm test
+```bash
+$ npm test
+```
 
 ## Автор
 
