@@ -202,7 +202,8 @@ describe 'Rubles in CoffeeScript', ->
 
 describe 'Rubles in JavaScript', ->
 
-  {rubles} = require '../lib/rubles.js'
+  path = if process.env.COVERAGE then '../lib-cov' else '../lib'
+  {rubles} = require "#{path}/rubles.js"
 
   it 'construct', -> construct rubles
 
