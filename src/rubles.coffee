@@ -67,9 +67,9 @@ parseDecimals = (number) ->
   " #{number} #{text}"
 
 rubles = (number) ->
-  return false if not number
+  return false if not number or typeof number not in ['number', 'string']
 
-  if typeof number isnt 'number'
+  if typeof number is 'string'
     number = toFloat number.replace ',', '.'
     return false if isNaN number
 

@@ -20,6 +20,21 @@ construct = (rubles) ->
   text = rubles "0,00"
   text.should.be.false
 
+  text = rubles "test"
+  text.should.be.false
+
+  text = rubles []
+  text.should.be.false
+
+  text = rubles [10]
+  text.should.be.false
+
+  text = rubles {}
+  text.should.be.false
+
+  text = rubles test: 10
+  text.should.be.false
+
 decimals =
   good: (rubles) ->
     text = rubles 1.00
