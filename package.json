@@ -18,10 +18,10 @@
       , "jshint": "2.0.x"
       , "mocha": "1.9.x"
       , "should": "1.2.x"
-      , "uglify-js": "1.3.x"
+      , "uglify-js": "2.3.x"
     }
   , "scripts": {
-        "build": "./node_modules/.bin/coffee -c -o lib/ src/ && ./node_modules/.bin/uglifyjs --no-copyright lib/rubles.js > lib/rubles.min.js"
+        "build": "./node_modules/.bin/coffee -c -o lib/ src/ && ./node_modules/.bin/uglifyjs lib/rubles.js -o lib/rubles.min.js -m -c"
       , "lint": "npm run-script build && ./node_modules/.bin/jshint lib/rubles.js"
       , "test": "npm run-script build && ./node_modules/.bin/mocha test"
   }

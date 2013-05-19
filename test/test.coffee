@@ -186,7 +186,7 @@ negative = (rubles) ->
 
 describe 'Rubles in CoffeeScript', ->
 
-  {rubles} = require '../src/rubles'
+  {rubles} = require '../src/rubles.coffee'
 
   it 'construct', -> construct rubles
 
@@ -202,7 +202,23 @@ describe 'Rubles in CoffeeScript', ->
 
 describe 'Rubles in JavaScript', ->
 
-  {rubles} = require '../lib/rubles'
+  {rubles} = require '../lib/rubles.js'
+
+  it 'construct', -> construct rubles
+
+  it 'decimals', -> decimals.good rubles
+  it 'bad decimals', -> decimals.poor rubles
+
+  it 'numbers', -> numbers rubles
+  it 'thousands', -> thousands rubles
+  it 'millions', -> millions rubles
+  it 'billions', -> billions rubles
+
+  it 'negative', -> negative rubles
+
+describe 'Rubles in minify JavaScript', ->
+
+  {rubles} = require '../lib/rubles.min.js'
 
   it 'construct', -> construct rubles
 
