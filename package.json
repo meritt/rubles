@@ -18,14 +18,11 @@
       , "jshint": "2.0.x"
       , "mocha": "1.9.x"
       , "should": "1.2.x"
-
       , "uglify-js": "1.3.x"
     }
   , "scripts": {
-        "build": "coffee -c -o lib/ src/ && uglifyjs --no-copyright lib/rubles.js > lib/rubles.min.js"
-      , "lint": "npm run-script build && jshint lib/rubles.js"
-
-      , "mocha": "mocha --require should --reporter spec --compilers coffee:coffee-script test/test.coffee" 
-      , "test": "npm run-script build && npm run-script mocha"
+        "build": "./node_modules/.bin/coffee -c -o lib/ src/ && ./node_modules/.bin/uglifyjs --no-copyright lib/rubles.js > lib/rubles.min.js"
+      , "lint": "npm run-script build && ./node_modules/.bin/jshint lib/rubles.js"
+      , "test": "npm run-script build && ./node_modules/.bin/mocha test"
   }
 }

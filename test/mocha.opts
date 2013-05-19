@@ -1,0 +1,4 @@
+--reporter spec
+--require should
+--compilers coffee:coffee-script
+test/test.coffee
