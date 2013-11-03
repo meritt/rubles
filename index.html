@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -17,29 +16,36 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Rubles.js</h1>
-        <p>Стоимость прописью</p>
-        <p class="view"><a href="https://github.com/meritt/rubles">View the Project on GitHub <small>meritt/rubles</small></a></p>
+        <h1 class="header">Rubles.js</h1>
+        <p class="header">Стоимость прописью</p>
+
         <ul>
-          <li><a href="https://github.com/meritt/rubles/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/meritt/rubles/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/meritt/rubles">View On <strong>GitHub</strong></a></li>
+          <li class="download"><a class="buttons" href="https://github.com/meritt/rubles/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/meritt/rubles/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/meritt/rubles">View On GitHub</a></li>
         </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/meritt">meritt</a></p>
+
+
       </header>
       <section>
         <p>В российском документообороте принято писать сумму прописью. Такое должно быть в договорах, актах, расписках и других подобных документах. Rubles.js призван решить эту проблему комплексно, он работает в браузере и на серверной стороне.</p>
 
-<h3>На сервере</h3>
+<h3>
+<a name="%D0%9D%D0%B0-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B5" class="anchor" href="#%D0%9D%D0%B0-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B5"><span class="octicon octicon-link"></span></a>На сервере</h3>
 
-<h4>Установить через <a href="//npmjs.org">npm</a>
+<h4>
+<a name="%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-%D1%87%D0%B5%D1%80%D0%B5%D0%B7-npm" class="anchor" href="#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-%D1%87%D0%B5%D1%80%D0%B5%D0%B7-npm"><span class="octicon octicon-link"></span></a>Установить через <a href="//npmjs.org">npm</a>
 </h4>
 
 <pre><code>$ npm install rubles
 </code></pre>
 
-<h4>Использовать в JavaScript</h4>
+<h4>
+<a name="%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D0%B2-javascript" class="anchor" href="#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D0%B2-javascript"><span class="octicon octicon-link"></span></a>Использовать в JavaScript</h4>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">rubles</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'rubles'</span><span class="p">).</span><span class="nx">rubles</span><span class="p">;</span>
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">rubles</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'rubles'</span><span class="p">).</span><span class="nx">rubles</span><span class="p">;</span>
 
 <span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="nx">rubles</span><span class="p">(</span><span class="mf">12.10</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span> <span class="c1">// двенадцать рублей 10 копеек</span>
@@ -48,9 +54,10 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span> <span class="c1">// пятьдесят две тысячи сто пятьдесят один рубль 31 копейка</span>
 </pre></div>
 
-<h4>Использовать в CoffeeScript</h4>
+<h4>
+<a name="%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D0%B2-coffeescript" class="anchor" href="#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D0%B2-coffeescript"><span class="octicon octicon-link"></span></a>Использовать в CoffeeScript</h4>
 
-<div class="highlight"><pre><span class="p">{</span><span class="nx">rubles</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span> <span class="s">'rubles'</span>
+<div class="highlight highlight-coffeescript"><pre><span class="p">{</span><span class="nx">rubles</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span> <span class="s">'rubles'</span>
 
 <span class="nv">text = </span><span class="nx">rubles</span> <span class="mf">1000.32</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="nx">text</span> <span class="c1"># одна тысяча рублей 32 копейки</span>
@@ -59,22 +66,26 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="nx">text</span> <span class="c1"># два миллиона рублей 10 копеек</span>
 </pre></div>
 
-<hr><h3>В браузере</h3>
+<hr><h3>
+<a name="%D0%92-%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D0%B5" class="anchor" href="#%D0%92-%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D0%B5"><span class="octicon octicon-link"></span></a>В браузере</h3>
 
-<h4>Установить через <a href="http://bower.io">bower</a>
+<h4>
+<a name="%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-%D1%87%D0%B5%D1%80%D0%B5%D0%B7-bower" class="anchor" href="#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C-%D1%87%D0%B5%D1%80%D0%B5%D0%B7-bower"><span class="octicon octicon-link"></span></a>Установить через <a href="http://bower.io">bower</a>
 </h4>
 
 <pre><code>$ bower install rubles --save
 </code></pre>
 
-<h4>Подключить</h4>
+<h4>
+<a name="%D0%9F%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D1%8C" class="anchor" href="#%D0%9F%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D1%8C"><span class="octicon octicon-link"></span></a>Подключить</h4>
 
-<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"components/rubles/lib/rubles.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"components/rubles/lib/rubles.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
 
-<h4>Использовать</h4>
+<h4>
+<a name="%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C" class="anchor" href="#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C"><span class="octicon octicon-link"></span></a>Использовать</h4>
 
-<div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script&gt;</span>
 <span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="nx">rubles</span><span class="p">(</span><span class="mf">12.10</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span> <span class="c1">// двенадцать рублей 10 копеек</span>
 
@@ -83,11 +94,13 @@
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
 
-<hr><h3>Нашли ошибку?</h3>
+<hr><h3>
+<a name="%D0%9D%D0%B0%D1%88%D0%BB%D0%B8-%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D1%83" class="anchor" href="#%D0%9D%D0%B0%D1%88%D0%BB%D0%B8-%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D1%83"><span class="octicon octicon-link"></span></a>Нашли ошибку?</h3>
 
 <p>Пожалуйста, создайте тикет — <a href="https://github.com/meritt/rubles/issues">https://github.com/meritt/rubles/issues</a></p>
 
-<h3>Тестирование</h3>
+<h3>
+<a name="%D0%A2%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5" class="anchor" href="#%D0%A2%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5"><span class="octicon octicon-link"></span></a>Тестирование</h3>
 
 <p><a href="https://travis-ci.org/meritt/rubles"><img src="https://travis-ci.org/meritt/rubles.png?branch=master" alt="Build Status"></a> <a href="https://coveralls.io/r/meritt/rubles?branch=master"><img src="https://coveralls.io/repos/meritt/rubles/badge.png?branch=master" alt="Coverage Status"></a></p>
 
@@ -96,21 +109,24 @@
 <pre><code>$ npm test
 </code></pre>
 
-<h2>Автор</h2>
+<h2>
+<a name="%D0%90%D0%B2%D1%82%D0%BE%D1%80" class="anchor" href="#%D0%90%D0%B2%D1%82%D0%BE%D1%80"><span class="octicon octicon-link"></span></a>Автор</h2>
 
 <ul>
 <li>
 <a href="mailto:alexey@simonenko.su">Алексей Симоненко</a>, <a href="http://simonenko.su">simonenko.su</a>
 </li>
-</ul>
+</ul><hr><h2>
+<a name="%D0%9B%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F" class="anchor" href="#%D0%9B%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F"><span class="octicon octicon-link"></span></a>Лицензия</h2>
+
+<p>Лицензия MIT, смотрите файл <code>license.md</code>.</p>
       </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
     </div>
-    <footer>
-      <p>Project maintained by <a href="https://github.com/meritt">meritt</a></p>
-      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-              <script type="text/javascript">
+		          <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
