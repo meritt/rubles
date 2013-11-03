@@ -80,3 +80,9 @@ $ npm test
 ## Автор
 
 * [Алексей Симоненко](mailto:alexey@simonenko.su), [simonenko.su](http://simonenko.su)
+
+---
+
+## Лицензия
+
+Лицензия MIT, смотрите файл `license.md`.
