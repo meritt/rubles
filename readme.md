@@ -1,5 +1,6 @@
-## rubles.js — стоимость прописью [![Build Status](https://travis-ci.org/meritt/rubles.png?branch=master)](https://travis-ci.org/meritt/rubles) [![Coverage Status](https://coveralls.io/repos/meritt/rubles/badge.png?branch=master)](https://coveralls.io/r/meritt/rubles?branch=master)
+## rubles.js — стоимость прописью
 
+[![Build Status](https://travis-ci.org/meritt/rubles.png?branch=master)](https://travis-ci.org/meritt/rubles) [![Coverage Status](https://coveralls.io/repos/meritt/rubles/badge.png?branch=master)](https://coveralls.io/r/meritt/rubles?branch=master) [![NPM version](https://badge.fury.io/js/rubles.png)](http://badge.fury.io/js/rubles) [![devDependency Status](https://david-dm.org/meritt/rubles/dev-status.png)](https://david-dm.org/meritt/rubles#info=devDependencies)
 
 В российском документообороте принято писать сумму прописью. Такое должно быть в договорах, актах, расписках и других подобных документах. Rubles.js призван решить эту проблему комплексно, он работает в браузере и на серверной стороне.
 
@@ -7,7 +8,7 @@
 
 #### Установить через [npm](//npmjs.org)
 
-```bash
+```
 $ npm install rubles
 ```
 
@@ -41,7 +42,7 @@ console.log text # два миллиона рублей 10 копеек
 
 #### Установить через [bower](http://bower.io)
 
-```bash
+```
 $ bower install rubles --save
 ```
 
@@ -80,8 +81,6 @@ $ npm test
 ## Автор
 
 * [Алексей Симоненко](mailto:alexey@simonenko.su), [simonenko.su](http://simonenko.su)
-
----
 
 ## Лицензия
 
