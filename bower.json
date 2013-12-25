@@ -10,6 +10,7 @@
       , ".npmignore"
       , ".travis.yml"
       , "package.json"
+      , "src"
       , "test"
     ]
 }

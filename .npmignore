@@ -1,4 +1,5 @@
+src
+test
 .jshintrc
 .travis.yml
 bower.json
-test
