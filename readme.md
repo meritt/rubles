@@ -14,7 +14,7 @@ $ npm install rubles
 
 #### Использовать в JavaScript
 
-```javascript
+```js
 var rubles = require('rubles').rubles;
 
 var text = rubles(12.10);
@@ -85,3 +85,5 @@ $ npm test
 ## Лицензия
 
 Лицензия MIT, смотрите файл `license.md`.
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/meritt/rubles/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
