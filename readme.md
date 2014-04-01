@@ -1,6 +1,6 @@
 ## rubles.js — стоимость прописью
 
-[![NPM version](https://badge.fury.io/js/rubles.png)](http://badge.fury.io/js/rubles) [![Build Status](https://travis-ci.org/meritt/rubles.png?branch=master)](https://travis-ci.org/meritt/rubles) [![Coverage Status](https://coveralls.io/repos/meritt/rubles/badge.png?branch=master)](https://coveralls.io/r/meritt/rubles?branch=master) [![devDependency Status](https://david-dm.org/meritt/rubles/dev-status.png)](https://david-dm.org/meritt/rubles#info=devDependencies)
+[![NPM version](https://badge.fury.io/js/rubles.svg)](http://badge.fury.io/js/rubles) [![Build Status](https://travis-ci.org/meritt/rubles.svg?branch=master)](https://travis-ci.org/meritt/rubles) [![Coverage Status](https://coveralls.io/repos/meritt/rubles/badge.png?branch=master)](https://coveralls.io/r/meritt/rubles?branch=master) [![devDependency Status](https://david-dm.org/meritt/rubles/dev-status.svg?theme=shields.io)](https://david-dm.org/meritt/rubles#info=devDependencies)
 
 В российском документообороте принято писать сумму прописью. Такое должно быть в договорах, актах, расписках и других подобных документах. Rubles.js призван решить эту проблему комплексно, он работает в браузере и на серверной стороне.
 
