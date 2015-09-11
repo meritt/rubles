@@ -40,7 +40,7 @@ $ bower install rubles --save
 #### Подключить
 
 ```html
-<script src="components/rubles/lib/rubles.min.js"></script>
+<script src="bower_components/rubles/lib/rubles.min.js"></script>
 ```
 
 #### Использовать
