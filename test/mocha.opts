@@ -1,4 +1,6 @@
 --reporter spec
 --require should
---compilers coffee:coffee-script/register
-test/test.coffee
+--bail
+--check-leaks
+
+test/test.js
