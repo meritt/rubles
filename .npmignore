@@ -1,5 +1,5 @@
-src
 test
-.jshintrc
+.editorconfig
+.eslintrc
 .travis.yml
 bower.json

@@ -1,5 +1,6 @@
+node_modules/
+*.log
 .DS_Store
-node_modules
 lib-cov
 html-report
 lcov.info
