@@ -27,6 +27,7 @@
     "coffee-script": "^1.10.0",
     "coveralls": "^2.11.4",
     "eslint": "^1.4.1",
+    "husky": "^0.10.1",
     "istanbul": "^0.3.19",
     "mocha": "^2.3.2",
     "mocha-istanbul": "^0.2.0",
