@@ -24,7 +24,6 @@
     "test": "npm run mocha"
   },
   "devDependencies": {
-    "coffee-script": "^1.10.0",
     "coveralls": "^2.11.4",
     "eslint": "^1.4.1",
     "husky": "^0.10.1",
