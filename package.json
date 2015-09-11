@@ -1,36 +1,40 @@
 {
-    "name": "rubles"
-  , "version": "0.1.5"
-  , "description": "Стоимость прописью"
-  , "keywords": ["ruble", "numeral"]
-  , "author": "Alexey Simonenko <alexey@simonenko.su>"
-  , "homepage": "http://simonenko.su/projects/rubles"
-  , "main": "./lib/rubles"
-  , "repository": {
-        "type": "git"
-      , "url": "https://github.com/meritt/rubles.git"
-    }
-  , "engines": {
-      "node": ">=0.10"
-    }
-  , "devDependencies": {
-        "coffee-script": "~1.7.1"
-      , "jshint": "~2.4"
-      , "mocha": "~1.18"
-      , "should": "~3.2"
-      , "coveralls": "~2.10"
-      , "istanbul": "~0.2"
-      , "mocha-istanbul": "~0.2"
-      , "uglify-js": "~2.4"
-    }
-  , "scripts": {
-        "build": "./node_modules/.bin/coffee -c -o lib/ src/ && ./node_modules/.bin/uglifyjs lib/rubles.js -o lib/rubles.min.js -m -c"
-      , "lint": "npm run build && ./node_modules/.bin/jshint lib/rubles.js"
-
-      , "lib-cov": "./node_modules/.bin/istanbul instrument --output lib-cov --no-compact --variable global.__coverage__ lib"
-      , "coveralls": "npm run lib-cov && COVERAGE=1 ISTANBUL_REPORTERS=lcovonly ./node_modules/.bin/mocha --reporter mocha-istanbul && cat lcov.info | ./node_modules/.bin/coveralls && rm -rf lib-cov lcov.info"
-
-      , "test": "npm run build && ./node_modules/.bin/mocha && npm run coveralls"
-    }
-  , "license": "MIT"
+  "name": "rubles",
+  "version": "0.1.5",
+  "description": "Стоимость прописью",
+  "keywords": [
+    "ruble",
+    "numeral"
+  ],
+  "author": "Alexey Simonenko <alexey@simonenko.su>",
+  "homepage": "http://simonenko.su/projects/rubles",
+  "main": "./lib/rubles",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meritt/rubles.git"
+  },
+  "scripts": {
+    "lint": "eslint lib/rubles.js",
+    "prepush": "npm run lint",
+    "pretest": "npm run lint",
+    "build": "uglifyjs lib/rubles.js -o lib/rubles.min.js -m -c",
+    "lib-cov": "istanbul instrument --output lib-cov --no-compact --variable global.__coverage__ lib",
+    "coveralls": "npm run lib-cov && COVERAGE=1 ISTANBUL_REPORTERS=lcovonly mocha --reporter mocha-istanbul && cat lcov.info | coveralls && rm -rf lib-cov lcov.info",
+    "mocha": "mocha --reporter dot",
+    "test": "npm run build && npm run mocha && npm run coveralls"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.10.0",
+    "coveralls": "^2.11.4",
+    "eslint": "^1.4.1",
+    "istanbul": "^0.3.19",
+    "mocha": "^2.3.2",
+    "mocha-istanbul": "^0.2.0",
+    "should": "^7.1.0",
+    "uglify-js": "^2.4.24"
+  },
+  "engines": {
+    "node": "^0.12.7"
+  },
+  "license": "MIT"
 }
