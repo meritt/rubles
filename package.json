@@ -14,14 +14,14 @@
     "url": "https://github.com/meritt/rubles.git"
   },
   "scripts": {
-    "lint": "eslint lib/rubles.js test/test.js",
-    "prepush": "npm run lint",
-    "pretest": "npm run lint",
     "build": "uglifyjs lib/rubles.js -o lib/rubles.min.js -m -c",
-    "lib-cov": "istanbul instrument --output lib-cov --no-compact --variable global.__coverage__ lib",
-    "coveralls": "npm run lib-cov && COVERAGE=1 ISTANBUL_REPORTERS=lcovonly mocha --reporter mocha-istanbul && cat lcov.info | coveralls && rm -rf lib-cov lcov.info",
     "mocha": "mocha --reporter dot",
-    "test": "npm run build && npm run mocha && npm run coveralls"
+    "lint": "eslint lib/rubles.js test/test.js",
+    "lib-cov": "istanbul instrument --output lib-cov --no-compact --variable global.__coverage__ lib",
+    "prepush": "npm run lint",
+    "pretest": "npm run lint && npm run build",
+    "posttest": "npm run lib-cov && COVERAGE=1 ISTANBUL_REPORTERS=lcovonly mocha --reporter mocha-istanbul && cat lcov.info | coveralls && rm -rf lib-cov lcov.info",
+    "test": "npm run mocha"
   },
   "devDependencies": {
     "coffee-script": "^1.10.0",
