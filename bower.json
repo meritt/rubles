@@ -1,16 +1,16 @@
 {
-    "name": "rubles"
-  , "version": "0.1.5"
-  , "author": "Alexey Simonenko <alexey@simonenko.su>"
-  , "homepage": "http://simonenko.su/projects/rubles"
-  , "main": "./lib/rubles.min.js"
-  , "ignore": [
-        ".gitignore"
-      , ".jshintrc"
-      , ".npmignore"
-      , ".travis.yml"
-      , "package.json"
-      , "src"
-      , "test"
-    ]
+  "name": "rubles",
+  "version": "0.1.5",
+  "author": "Alexey Simonenko <alexey@simonenko.su>",
+  "homepage": "http://simonenko.su/projects/rubles",
+  "main": "./lib/rubles.min.js",
+  "ignore": [
+    ".editorconfig",
+    ".eslintrc",
+    ".gitignore",
+    ".npmignore",
+    ".travis.yml",
+    "package.json",
+    "test"
+  ]
 }
