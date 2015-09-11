@@ -14,7 +14,7 @@
     "url": "https://github.com/meritt/rubles.git"
   },
   "scripts": {
-    "lint": "eslint lib/rubles.js",
+    "lint": "eslint lib/rubles.js test/test.js",
     "prepush": "npm run lint",
     "pretest": "npm run lint",
     "build": "uglifyjs lib/rubles.js -o lib/rubles.min.js -m -c",

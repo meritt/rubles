@@ -1,3 +1,5 @@
+'use strict';
+
 var construct = function(rubles) {
   var text = rubles();
   text.should.be.false();
