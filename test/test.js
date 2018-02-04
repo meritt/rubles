@@ -171,6 +171,17 @@ var billions = function(rubles) {
   text.should.equal('девятьсот девяносто девять миллиардов девятьсот девяносто девять миллионов девятьсот девяносто девять тысяч девятьсот девяносто девять рублей 00 копеек');
 };
 
+var currencyCodes = function(rubles) {
+  var text = rubles(44.20);
+  text.should.equal('сорок четыре рубля 20 копеек');
+
+  text = rubles(44.20, 'RU');
+  text.should.equal('сорок четыре рубля 20 копеек');
+
+  text = rubles(44.2, 'BYN');
+  text.should.equal('сорок четыре белорусских рубля 20 копеек');
+};
+
 var negative = function(rubles) {
   var text = rubles(-100);
   text.should.be.false();
@@ -212,7 +223,9 @@ describe('Rubles in JavaScript', function() {
   it('billions', function() {
     billions(rubles);
   });
-
+  it('currencyCodes', function() {
+    currencyCodes(rubles);
+  });
   it('negative', function() {
     negative(rubles);
   });
@@ -244,7 +257,9 @@ describe('Rubles in minify JavaScript', function() {
   it('billions', function() {
     billions(rubles);
   });
-
+  it('currencyCodes', function() {
+    currencyCodes(rubles);
+  });
   it('negative', function() {
     negative(rubles);
   });
