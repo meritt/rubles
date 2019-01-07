@@ -30,6 +30,12 @@ var text = rubles(44.2, { // объект настроек
     currCode: 'BYN' // 'BYN' или 'RU'
   });
 console.log(text); // сорок четыре белорусских рубля 20 копеек
+
+var text = rubles(44.2, {
+  decimals: false,
+  currCode: 'BYN'
+});
+console.log(text); // две тысячи десять белорусских рублей
 ```
 
 ----------------

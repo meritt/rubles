@@ -208,6 +208,19 @@ var negative = function(rubles) {
   text.should.be.false();
 };
 
+var withOutDecimals = function(rubles) {
+  var text = rubles('2000', {
+    decimals: false
+  });
+  text.should.equal('две тысячи рублей');
+
+  text = rubles('2010', {
+    decimals: false,
+    currCode: 'BYN'
+  });
+  text.should.equal('две тысячи десять белорусских рублей');
+};
+
 describe('Rubles in JavaScript', function() {
   var path = (process.env.COVERAGE) ? '../lib-cov' : '../lib';
   var rubles = require(path + '/rubles.js').rubles;
@@ -243,6 +256,9 @@ describe('Rubles in JavaScript', function() {
   });
   it('secondParamAsObject', function() {
     secondParamAsObject(rubles);
+  });
+  it('withOutDecimals', function() {
+    withOutDecimals(rubles);
   });
 });
 
@@ -280,5 +296,8 @@ describe('Rubles in minify JavaScript', function() {
   });
   it('secondParamAsObject', function() {
     secondParamAsObject(rubles);
+  });
+  it('withOutDecimals', function() {
+    withOutDecimals(rubles);
   });
 });
