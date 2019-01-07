@@ -182,6 +182,18 @@ var currencyCodes = function(rubles) {
   text.should.equal('сорок четыре белорусских рубля 20 копеек');
 };
 
+var secondParamAsObject = function(rubles) {
+  var text = rubles(44.20, {
+    currCode: 'RU'
+  });
+  text.should.equal('сорок четыре рубля 20 копеек');
+
+  text = rubles(44.2, {
+    currCode: 'BYN'
+  });
+  text.should.equal('сорок четыре белорусских рубля 20 копеек');
+};
+
 var negative = function(rubles) {
   var text = rubles(-100);
   text.should.be.false();
@@ -229,6 +241,9 @@ describe('Rubles in JavaScript', function() {
   it('negative', function() {
     negative(rubles);
   });
+  it('secondParamAsObject', function() {
+    secondParamAsObject(rubles);
+  });
 });
 
 describe('Rubles in minify JavaScript', function() {
@@ -262,5 +277,8 @@ describe('Rubles in minify JavaScript', function() {
   });
   it('negative', function() {
     negative(rubles);
+  });
+  it('secondParamAsObject', function() {
+    secondParamAsObject(rubles);
   });
 });
