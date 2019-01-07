@@ -182,6 +182,18 @@ var currencyCodes = function(rubles) {
   text.should.equal('сорок четыре белорусских рубля 20 копеек');
 };
 
+var secondParamAsObject = function(rubles) {
+  var text = rubles(44.20, {
+    currCode: 'RU'
+  });
+  text.should.equal('сорок четыре рубля 20 копеек');
+
+  text = rubles(44.2, {
+    currCode: 'BYN'
+  });
+  text.should.equal('сорок четыре белорусских рубля 20 копеек');
+};
+
 var negative = function(rubles) {
   var text = rubles(-100);
   text.should.be.false();
@@ -194,6 +206,46 @@ var negative = function(rubles) {
 
   text = rubles('-0.01');
   text.should.be.false();
+};
+
+var withOutDecimals = function(rubles) {
+  var text = rubles('2000', {
+    decimals: false
+  });
+  text.should.equal('две тысячи рублей');
+
+  text = rubles('2010', {
+    decimals: false,
+    currCode: 'BYN'
+  });
+  text.should.equal('две тысячи десять белорусских рублей');
+};
+
+var withOutNominal = function(rubles) {
+  var text = rubles('2000', {
+    decimals: false,
+    nominal: false
+  });
+  text.should.equal('две тысячи');
+
+  text = rubles('2000.55', {
+    decimals: true,
+    nominal: false
+  });
+  text.should.equal('две тысячи 55');
+
+  text = rubles('20', {
+    decimals: true,
+    nominal: false
+  });
+  text.should.equal('двадцать 00');
+
+  text = rubles('2000', {
+    decimals: false,
+    nominal: false,
+    currCode: 'BYN'
+  });
+  text.should.equal('две тысячи');
 };
 
 describe('Rubles in JavaScript', function() {
@@ -229,6 +281,15 @@ describe('Rubles in JavaScript', function() {
   it('negative', function() {
     negative(rubles);
   });
+  it('secondParamAsObject', function() {
+    secondParamAsObject(rubles);
+  });
+  it('withOutDecimals', function() {
+    withOutDecimals(rubles);
+  });
+  it('withOutNominal', function() {
+    withOutNominal(rubles);
+  });
 });
 
 describe('Rubles in minify JavaScript', function() {
@@ -262,5 +323,14 @@ describe('Rubles in minify JavaScript', function() {
   });
   it('negative', function() {
     negative(rubles);
+  });
+  it('secondParamAsObject', function() {
+    secondParamAsObject(rubles);
+  });
+  it('withOutDecimals', function() {
+    withOutDecimals(rubles);
+  });
+  it('withOutNominal', function() {
+    withOutNominal(rubles);
   });
 });

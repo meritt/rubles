@@ -25,6 +25,29 @@ console.log(text); // двенадцать рублей 10 копеек
 
 var text = rubles("52151,31");
 console.log(text); // пятьдесят две тысячи сто пятьдесят один рубль 31 копейка
+
+var text = rubles(44.2, { // объект настроек
+    currCode: 'BYN' // 'BYN' или 'RU'
+  });
+console.log(text); // сорок четыре белорусских рубля 20 копеек
+
+var text = rubles(44.2, {
+  decimals: false,
+  currCode: 'BYN'
+});
+console.log(text); // две тысячи десять белорусских рублей
+
+var text = rubles('2000', {
+  decimals: false,
+  nominal: false
+});
+console.log(text); // две тысячи
+
+var text = rubles('20', {
+  decimals: true,
+  nominal: false
+});
+console.log(text); // двадцать 00
 ```
 
 ----------------
