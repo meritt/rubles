@@ -221,6 +221,33 @@ var withOutDecimals = function(rubles) {
   text.should.equal('две тысячи десять белорусских рублей');
 };
 
+var withOutNominal = function(rubles) {
+  var text = rubles('2000', {
+    decimals: false,
+    nominal: false
+  });
+  text.should.equal('две тысячи');
+
+  text = rubles('2000.55', {
+    decimals: true,
+    nominal: false
+  });
+  text.should.equal('две тысячи 55');
+
+  text = rubles('20', {
+    decimals: true,
+    nominal: false
+  });
+  text.should.equal('двадцать 00');
+
+  text = rubles('2000', {
+    decimals: false,
+    nominal: false,
+    currCode: 'BYN'
+  });
+  text.should.equal('две тысячи');
+};
+
 describe('Rubles in JavaScript', function() {
   var path = (process.env.COVERAGE) ? '../lib-cov' : '../lib';
   var rubles = require(path + '/rubles.js').rubles;
@@ -259,6 +286,9 @@ describe('Rubles in JavaScript', function() {
   });
   it('withOutDecimals', function() {
     withOutDecimals(rubles);
+  });
+  it('withOutNominal', function() {
+    withOutNominal(rubles);
   });
 });
 
@@ -299,5 +329,8 @@ describe('Rubles in minify JavaScript', function() {
   });
   it('withOutDecimals', function() {
     withOutDecimals(rubles);
+  });
+  it('withOutNominal', function() {
+    withOutNominal(rubles);
   });
 });
