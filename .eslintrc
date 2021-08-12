@@ -30,12 +30,10 @@
     "prefer-spread": 2,
     "quotes": [2, "single"],
     "semi": [2, "always"],
-    "space-after-keywords": 1,
     "space-before-blocks": 1,
     "space-before-function-paren": [1, "never"],
     "space-in-parens": 1,
     "space-infix-ops": 1,
-    "space-return-throw-case": 1,
     "wrap-iife": [2, "inside"]
   }
 }

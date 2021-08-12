@@ -1,6 +1,6 @@
 {
   "name": "rubles",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Стоимость прописью",
   "keywords": [
     "ruble",
@@ -9,6 +9,7 @@
   "author": "Alexey Simonenko <alexey@simonenko.su>",
   "homepage": "http://simonenko.su/projects/rubles",
   "main": "./lib/rubles",
+  "types": "./rubles.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/meritt/rubles.git"
@@ -32,9 +33,6 @@
     "mocha-istanbul": "^0.2.0",
     "should": "^7.1.0",
     "uglify-js": "^2.4.24"
-  },
-  "engines": {
-    "node": "^0.12.7"
   },
   "license": "MIT"
 }
