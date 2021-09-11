@@ -1,5 +1,6 @@
 node_modules/
 *.log
+.idea
 .DS_Store
 lib-cov
 html-report

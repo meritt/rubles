@@ -1,22 +1,21 @@
 {
-  "name": "rubles",
-  "version": "0.2.0",
+  "name": "parse-money",
   "description": "Стоимость прописью",
   "keywords": [
     "ruble",
     "numeral"
   ],
+  "type": "module",
   "author": "Alexey Simonenko <alexey@simonenko.su>",
-  "homepage": "http://simonenko.su/projects/rubles",
-  "main": "./lib/rubles",
+  "main": "./lib/parseMoney",
   "repository": {
     "type": "git",
-    "url": "https://github.com/meritt/rubles.git"
+    "url": "https://github.com/germanKoch/parse-money.git"
   },
   "scripts": {
-    "build": "uglifyjs lib/rubles.js -o lib/rubles.min.js -m -c",
+    "build": "uglifyjs lib/parse-money.js -o lib/parse-money.min.js -m -c",
     "mocha": "mocha --reporter dot",
-    "lint": "eslint lib/rubles.js test/test.js",
+    "lint": "eslint lib/parse-money.js test/test.js",
     "lib-cov": "istanbul instrument --output lib-cov --no-compact --variable global.__coverage__ lib",
     "prepush": "npm run lint",
     "pretest": "npm run lint && npm run build",
@@ -24,17 +23,11 @@
     "test": "npm run mocha"
   },
   "devDependencies": {
+    "chai": "^4.3.4",
     "coveralls": "^2.11.4",
-    "eslint": "^1.4.1",
-    "husky": "^0.10.1",
-    "istanbul": "^0.3.19",
-    "mocha": "^2.3.2",
-    "mocha-istanbul": "^0.2.0",
-    "should": "^7.1.0",
-    "uglify-js": "^2.4.24"
-  },
-  "engines": {
-    "node": "^0.12.7"
+    "eslint": "^7.32.0",
+    "mocha": "^9.1.1",
+    "uglify-js": "^3.14.2"
   },
   "license": "MIT"
 }

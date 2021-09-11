@@ -46,12 +46,13 @@ $ bower install rubles --save
 #### Использовать
 
 ```html
-<script>
-var text = rubles(12.10);
-console.log(text); // двенадцать рублей 10 копеек
 
-var text = rubles("52151,31");
-console.log(text); // пятьдесят две тысячи сто пятьдесят один рубль 31 копейка
+<script>
+  var text = parseMoney(12.10);
+  console.log(text); // двенадцать рублей 10 копеек
+
+  var text = parseMoney("52151,31");
+  console.log(text); // пятьдесят две тысячи сто пятьдесят один рубль 31 копейка
 </script>
 ```
 
