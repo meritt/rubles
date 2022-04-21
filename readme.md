@@ -31,10 +31,22 @@ console.log(text); // пятьдесят две тысячи сто пятьде
 
 ### В браузере
 
-#### Установить через [bower](http://bower.io)
+#### Установить через [npm](//npmjs.org)
 
 ```bash
-$ bower install rubles --save
+$ npm install rubles --save
+```
+
+#### Как использовать
+
+```js
+import { rubles } from 'rubles';
+
+const text = rubles(12.10);
+console.log(text); // двенадцать рублей 10 копеек
+
+const text = rubles("52151,31");
+console.log(text); // пятьдесят две тысячи сто пятьдесят один рубль 31 копейка
 ```
 
 #### Подключить
