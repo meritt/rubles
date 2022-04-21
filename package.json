@@ -1,40 +1,61 @@
 {
   "name": "rubles",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Стоимость прописью",
-  "keywords": [
-    "ruble",
-    "numeral"
-  ],
   "author": "Alexey Simonenko <alexey@simonenko.su>",
   "homepage": "http://simonenko.su/projects/rubles",
-  "main": "./lib/rubles",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "browser": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/meritt/rubles.git"
   },
+  "keywords": [
+    "ruble",
+    "numeral"
+  ],
   "scripts": {
-    "build": "uglifyjs lib/rubles.js -o lib/rubles.min.js -m -c",
-    "mocha": "mocha --reporter dot",
-    "lint": "eslint lib/rubles.js test/test.js",
-    "lib-cov": "istanbul instrument --output lib-cov --no-compact --variable global.__coverage__ lib",
+    "build": "npm run clean && rollup -c",
+    "postbuild": "rimraf ./dist/src",
+    "test": "jest --collect-coverage",
+    "pretest:e2e": "npm run build",
+    "test:e2e": "jest --testMatch \"**/test/**/*.spec.ts\" ",
+    "test:coverage": "jest --collect-coverage && coveralls < coverage/lcov.info",
+    "lint": "eslint 'src/**/*.ts'",
+    "lint:fix": "eslint --fix 'src/**/*.ts'",
     "prepush": "npm run lint",
-    "pretest": "npm run lint && npm run build",
-    "posttest": "npm run lib-cov && COVERAGE=1 ISTANBUL_REPORTERS=lcovonly mocha --reporter mocha-istanbul && cat lcov.info | coveralls && rm -rf lib-cov lcov.info",
-    "test": "npm run mocha"
+    "prepublishOnly": "npm run build",
+    "clean": "rimraf dist"
   },
   "devDependencies": {
-    "coveralls": "^2.11.4",
-    "eslint": "^1.4.1",
-    "husky": "^0.10.1",
-    "istanbul": "^0.3.19",
-    "mocha": "^2.3.2",
-    "mocha-istanbul": "^0.2.0",
-    "should": "^7.1.0",
-    "uglify-js": "^2.4.24"
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^21.1.0",
+    "@rollup/plugin-node-resolve": "^13.2.1",
+    "@rollup/plugin-typescript": "^8.3.2",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.25",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "coveralls": "^3.1.1",
+    "eslint": "^8.13.0",
+    "jest": "^27.5.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.70.2",
+    "rollup-plugin-dts": "^4.2.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-jest": "^27.1.4",
+    "tslib": "^2.3.1",
+    "typescript": "~4.6.3"
   },
   "engines": {
-    "node": "^0.12.7"
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
   },
   "license": "MIT"
 }

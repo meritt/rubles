@@ -1,5 +1,12 @@
-test
+src
+node_modules
+coverage
 .editorconfig
 .eslintrc
+.babelrc.js
 .travis.yml
 bower.json
+rollup.config.js
+tsconfig.json
+jest.config.json
+.npmignore
