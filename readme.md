@@ -19,7 +19,7 @@ $ npm i --save rubles
 ```js
 var rubles = require('rubles').rubles;
 
-var text = rubles(12.1);
+var text = rubles(12.10);
 console.log(text); // двенадцать рублей 10 копеек
 
 var text = rubles('52151,31');
@@ -34,7 +34,7 @@ console.log(text); // пятьдесят две тысячи сто пятьде
 
 ```html
 <script>
-  var text = rubles(12.1);
+  var text = rubles(12.10);
   console.log(text); // двенадцать рублей 10 копеек
 
   var text = rubles('52151,31');
