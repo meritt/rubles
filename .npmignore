@@ -1,5 +1,5 @@
+.github
 test
 .editorconfig
-.eslintrc
-.travis.yml
-bower.json
+.prettierrc
+package-lock.json

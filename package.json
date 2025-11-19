@@ -1,6 +1,6 @@
 {
   "name": "rubles",
-  "version": "0.2.0",
+  "version": "2.0.0",
   "description": "Стоимость прописью",
   "keywords": [
     "ruble",
@@ -15,26 +15,15 @@
   },
   "scripts": {
     "build": "uglifyjs lib/rubles.js -o lib/rubles.min.js -m -c",
-    "mocha": "mocha --reporter dot",
-    "lint": "eslint lib/rubles.js test/test.js",
-    "lib-cov": "istanbul instrument --output lib-cov --no-compact --variable global.__coverage__ lib",
-    "prepush": "npm run lint",
-    "pretest": "npm run lint && npm run build",
-    "posttest": "npm run lib-cov && COVERAGE=1 ISTANBUL_REPORTERS=lcovonly mocha --reporter mocha-istanbul && cat lcov.info | coveralls && rm -rf lib-cov lcov.info",
-    "test": "npm run mocha"
+    "format": "prettier --write lib/rubles.js test/test.js",
+    "test": "npm run format && npm run build && node --test"
   },
   "devDependencies": {
-    "coveralls": "^2.11.4",
-    "eslint": "^1.4.1",
-    "husky": "^0.10.1",
-    "istanbul": "^0.3.19",
-    "mocha": "^2.3.2",
-    "mocha-istanbul": "^0.2.0",
-    "should": "^7.1.0",
-    "uglify-js": "^2.4.24"
+    "prettier": "^3.6.2",
+    "uglify-js": "^3.19.3"
   },
   "engines": {
-    "node": "^0.12.7"
+    "node": ">=24.0.0"
   },
   "license": "MIT"
 }

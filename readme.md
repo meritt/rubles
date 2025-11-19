@@ -1,8 +1,7 @@
 # rubles.js — стоимость прописью
 
 [![NPM version][npm-image]][npm-url]
-[![Build status][travis-image]][travis-url]
-[![Test coverage][coveralls-image]][coveralls-url]
+[![Build status][github-actions-image]][github-actions-url]
 [![devDependency status][devdependency-image]][devdependency-url]
 
 В российском документообороте принято писать сумму прописью. Такое должно быть в договорах, актах, расписках и других подобных документах. Rubles.js призван решить эту проблему комплексно, он работает в браузере и на серверной стороне.
@@ -20,42 +19,30 @@ $ npm i --save rubles
 ```js
 var rubles = require('rubles').rubles;
 
-var text = rubles(12.10);
+var text = rubles(12.1);
 console.log(text); // двенадцать рублей 10 копеек
 
-var text = rubles("52151,31");
+var text = rubles('52151,31');
 console.log(text); // пятьдесят две тысячи сто пятьдесят один рубль 31 копейка
 ```
 
-----------------
+---
 
 ### В браузере
-
-#### Установить через [bower](http://bower.io)
-
-```bash
-$ bower install rubles --save
-```
-
-#### Подключить
-
-```html
-<script src="bower_components/rubles/lib/rubles.min.js"></script>
-```
 
 #### Использовать
 
 ```html
 <script>
-var text = rubles(12.10);
-console.log(text); // двенадцать рублей 10 копеек
+  var text = rubles(12.1);
+  console.log(text); // двенадцать рублей 10 копеек
 
-var text = rubles("52151,31");
-console.log(text); // пятьдесят две тысячи сто пятьдесят один рубль 31 копейка
+  var text = rubles('52151,31');
+  console.log(text); // пятьдесят две тысячи сто пятьдесят один рубль 31 копейка
 </script>
 ```
 
-----------------
+---
 
 ### Нашли ошибку?
 
@@ -71,7 +58,7 @@ $ npm test
 
 ## Автор
 
-* [Алексей Симоненко](mailto:alexey@simonenko.su), [simonenko.su](http://simonenko.su)
+- [Алексей Симоненко](mailto:alexey@simonenko.su), [simonenko.su](http://simonenko.su)
 
 ## Лицензия
 
@@ -79,9 +66,7 @@ $ npm test
 
 [npm-image]: https://img.shields.io/npm/v/rubles.svg?style=flat
 [npm-url]: https://www.npmjs.com/package/rubles
-[travis-image]: https://travis-ci.org/meritt/rubles.svg?branch=master
-[travis-url]: https://travis-ci.org/meritt/rubles
-[coveralls-image]: https://coveralls.io/repos/meritt/rubles/badge.svg?branch=master&service=github
-[coveralls-url]: https://coveralls.io/github/meritt/rubles?branch=master
+[github-actions-image]: https://github.com/meritt/rubles/actions/workflows/ci.yml/badge.svg
+[github-actions-url]: https://github.com/meritt/rubles/actions/workflows/ci.yml
 [devdependency-image]: https://img.shields.io/david/dev/meritt/rubles.svg?style=flat
 [devdependency-url]: https://david-dm.org/meritt/rubles#info=devDependencies
