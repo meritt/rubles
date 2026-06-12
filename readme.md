@@ -1,72 +1,98 @@
-# rubles.js — стоимость прописью
+# rubles — стоимость прописью
 
 [![NPM version][npm-image]][npm-url]
 [![Build status][github-actions-image]][github-actions-url]
-[![devDependency status][devdependency-image]][devdependency-url]
+[![Coverage status][coveralls-image]][coveralls-url]
+[![Dependency status][libraries-image]][libraries-url]
 
-В российском документообороте принято писать сумму прописью. Такое должно быть в договорах, актах, расписках и других подобных документах. Rubles.js призван решить эту проблему комплексно, он работает в браузере и на серверной стороне.
+Преобразует денежную сумму в строку прописью на русском языке: `12.1` превращается в «двенадцать рублей 10 копеек». Поддерживает российские и белорусские рубли. ESM-модуль без зависимостей, работает на сервере и в браузере.
 
-### На сервере
+## Требования
 
-#### Установить через [npm](//npmjs.org)
+Node.js ≥ 24. В браузере — любой сборщик с поддержкой ESM (Vite, webpack, esbuild).
+
+## Установите пакет
 
 ```bash
-$ npm i --save rubles
+pnpm add rubles
+# или: npm install rubles
 ```
 
-#### Как использовать
+## Используйте
+
+Единственный именованный экспорт — функция `rubles`:
 
 ```js
-var rubles = require('rubles').rubles;
+import { rubles } from 'rubles';
 
-var text = rubles(12.10);
+let text = rubles(12.1);
 console.log(text); // двенадцать рублей 10 копеек
 
-var text = rubles('52151,31');
+let text = rubles('52151,31');
 console.log(text); // пятьдесят две тысячи сто пятьдесят один рубль 31 копейка
 ```
 
----
+В CommonJS пакет подключается через нативный `require(ESM)`:
 
-### В браузере
-
-#### Использовать
-
-```html
-<script>
-  var text = rubles(12.10);
-  console.log(text); // двенадцать рублей 10 копеек
-
-  var text = rubles('52151,31');
-  console.log(text); // пятьдесят две тысячи сто пятьдесят один рубль 31 копейка
-</script>
+```js
+const { rubles } = require('rubles');
 ```
 
----
+Отдельный браузерный бандл не поставляется. В браузере импортируйте пакет как обычный ESM-модуль — сборщик включит его в вашу сборку.
 
-### Нашли ошибку?
+## Сигнатура
 
-Пожалуйста, создайте тикет — https://github.com/meritt/rubles/issues
+```
+rubles(input, currencyCode?) → string | null
+```
 
-### Тестирование
+| Параметр | Тип | Описание |
+|----------|-----|----------|
+| `input` | `number` \| `string` | Сумма в рублях. Целая часть — рубли, дробная — копейки |
+| `currencyCode` | `string` | Необязательный. Значение `'BYN'` переключает на белорусские рубли |
 
-Для запуска тестов обновите репозиторий и запустите:
+Функция возвращает строку прописью либо `null`, если вход невалиден.
+
+Формат результата: рубли прописью, название валюты, копейки двузначным числом и слово «копейка» в нужной форме. Копейки выводятся цифрами с ведущим нулём, а не прописью:
+
+```js
+let text = rubles(1.05);
+console.log(text); // один рубль 05 копеек
+```
+
+Числительные склоняются по числу — для рублей, копеек, тысяч, миллионов и миллиардов.
+
+## Белорусские рубли
+
+Передайте `'BYN'` вторым аргументом:
+
+```js
+let text = rubles(44.2, 'BYN');
+console.log(text); // сорок четыре белорусских рубля 20 копеек
+
+let text = rubles(1, 'BYN');
+console.log(text); // один белорусский рубль 00 копеек
+```
+
+## Тестирование
 
 ```bash
-$ npm test
+pnpm test
 ```
 
 ## Автор
 
-- [Алексей Симоненко](mailto:alexey@simonenko.su), [simonenko.su](http://simonenko.su)
+[Алексей Симоненко](https://github.com/meritt)
 
 ## Лицензия
 
-Лицензия MIT, смотрите файл `license.md`.
+MIT. Смотрите файл `LICENSE`.
 
 [npm-image]: https://img.shields.io/npm/v/rubles.svg?style=flat
 [npm-url]: https://www.npmjs.com/package/rubles
 [github-actions-image]: https://github.com/meritt/rubles/actions/workflows/ci.yml/badge.svg
 [github-actions-url]: https://github.com/meritt/rubles/actions/workflows/ci.yml
-[devdependency-image]: https://img.shields.io/david/dev/meritt/rubles.svg?style=flat
-[devdependency-url]: https://david-dm.org/meritt/rubles#info=devDependencies
+[coveralls-image]: https://coveralls.io/repos/github/meritt/rubles/badge.svg?branch=main
+[coveralls-url]: https://coveralls.io/github/meritt/rubles?branch=main
+[libraries-image]: https://img.shields.io/librariesio/release/npm/rubles.svg?style=flat
+[libraries-url]: https://libraries.io/npm/rubles
