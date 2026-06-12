@@ -3,27 +3,38 @@
   "version": "2.0.0",
   "description": "Стоимость прописью",
   "keywords": [
-    "ruble",
-    "numeral"
+    "numeral",
+    "ruble"
   ],
-  "author": "Alexey Simonenko <alexey@simonenko.su>",
-  "homepage": "http://simonenko.su/projects/rubles",
-  "main": "./lib/rubles",
+  "license": "MIT",
+  "author": {
+    "name": "Alexey Simonenko",
+    "email": "alexey@simonenko.dev",
+    "url": "http://simonenko.xyz"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/meritt/rubles.git"
+    "url": "git+https://github.com/meritt/rubles.git"
   },
+  "files": [
+    "lib"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": "./lib/rubles.js",
   "scripts": {
-    "build": "uglifyjs lib/rubles.js -o lib/rubles.min.js -m -c",
-    "format": "prettier --write lib/rubles.js test/test.js",
-    "test": "npm run format && npm run build && node --test"
+    "lint": "oxlint",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "test": "node --test test/*.js",
+    "coverage": "mkdir -p coverage && node --test --experimental-test-coverage --test-coverage-lines=97 --test-coverage-branches=93 --test-coverage-functions=93 --test-reporter=spec --test-reporter-destination=stdout --test-reporter=lcov --test-reporter-destination=coverage/lcov.info test/*.js"
   },
   "devDependencies": {
-    "prettier": "^3.6.2",
-    "uglify-js": "^3.19.3"
+    "oxfmt": "^0.54.0",
+    "oxlint": "^1.69.0"
   },
   "engines": {
-    "node": ">=24.0.0"
+    "node": ">=24"
   },
-  "license": "MIT"
+  "packageManager": "pnpm@11.5.3"
 }

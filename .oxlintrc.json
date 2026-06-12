@@ -1,0 +1,63 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["eslint", "unicorn", "oxc", "import"],
+  "env": {
+    "shared-node-browser": true,
+    "es2026": true
+  },
+  "ignorePatterns": ["node_modules/", "coverage/"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "perf": "error"
+  },
+  "rules": {
+    "no-undef": "error",
+    "eqeqeq": ["error", "always", { "null": "ignore" }],
+    "no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
+    ],
+    "no-use-before-define": ["error", { "functions": false }],
+    "no-var": "error",
+    "prefer-const": "error",
+    "prefer-template": "error",
+    "prefer-destructuring": ["error", { "object": true, "array": false }],
+    "prefer-exponentiation-operator": "error",
+    "prefer-object-spread": "error",
+    "prefer-object-has-own": "error",
+    "prefer-rest-params": "error",
+    "object-shorthand": ["error", "always"],
+    "operator-assignment": ["error", "never"],
+    "yoda": "error",
+    "no-else-return": "error",
+    "no-lonely-if": "error",
+    "no-self-compare": "error",
+    "no-template-curly-in-string": "error",
+    "no-unmodified-loop-condition": "error",
+    "no-useless-call": "error",
+    "no-useless-concat": "error",
+    "no-useless-rename": "error",
+    "no-useless-return": "error",
+    "complexity": "error",
+    "max-depth": "error",
+    "unicorn/no-negated-condition": "error",
+    "unicorn/prefer-at": "error",
+    "unicorn/prefer-node-protocol": "error",
+    "unicorn/prefer-number-properties": "error",
+    "unicorn/prefer-string-replace-all": "error",
+    "unicorn/prefer-string-slice": "error",
+    "import/first": "error",
+    "import/no-commonjs": "error",
+    "import/no-duplicates": "error",
+    "import/no-mutable-exports": "error"
+  },
+  "overrides": [
+    {
+      "files": ["test/**/*.js"],
+      "env": {
+        "node": true
+      }
+    }
+  ]
+}
